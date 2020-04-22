@@ -1,0 +1,43 @@
+https://gist.github.com/f3ad2b6d7992f9172293972d7135d302
+def  ground_shipping(weight): 
+  if weight <= 2:
+    return 20 + 1.5*weight
+  elif 6 >= weight > 2:
+    return  3*weight + 20 
+  elif 10 >= weight > 6:
+    return  4*weight + 20
+  else:
+    4.75*weight + 20
+print(ground_shipping(8.4))
+
+premium_ground_shipping = 125
+
+def  drone_shipping(weight):
+  if weight <= 2:
+    return 4.5*weight 
+  elif 6 >= weight> 2:
+    return 9*weight 
+  elif 10 >= weight > 6:
+    return 12*weight
+  else:
+    return 14.25*weight 
+  
+print(drone_shipping(1.5))
+
+def  whats_cheapest(weight):
+  if drone_shipping(weight) > ground_shipping(weight):
+    cheapest = ground_shipping(weight)
+  
+  elif drone_shipping(weight) < ground_shipping(weight):
+    cheapest = drone_shipping(weight)
+    
+  else: 
+    cheapest = premium_ground_shipping
+
+  return cheapest
+
+
+print(whats_cheapest(41.5))
+
+  
+
